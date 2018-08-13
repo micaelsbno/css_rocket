@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #226;
+  overflow-x: hidden;
+}
+
+.main-body {
+  display: flex;
+  position: relative;
+  height: 400px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.left-wing {
+  border: 60px solid transparent;
+  height: 10%;
+  border-bottom: 0;
+  border-right: 50px solid #fc5e61;
+  width: 100px;
+}
+
+.middle {
+  width: 100px;
+}
+
+.right-wing {
+  border: 60px solid transparent;
+  height: 10%;
+  border-bottom: 0;
+  border-left: 50px solid #fc5e61;
+  width: 100px;
+}
+
+.top {
+  border: 50px solid transparent;
+  height: 10%;
+  border-bottom: 50px solid #fc5e61;
+  width: 100px; 
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  height: 150px;
+}
+
+.window {
+  border-radius: 40px;
+  border: 5px solid black;
+  background-color: #76d8fd;
+  height: 40px;
+  width: 40px;
+  transform: translateY(20px);
+}
+
+.fire {
+  position: relative;
+  text-align: center;
+  align-self: center;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.fire__big {
+  position: absolute;
+  border: 30px solid transparent;
+  height: 7%;
+  border-top: 43px solid #fdd99f;
+  width: 23px;
+  left: 34%;
+}
+
+.fire__small {
+  position: absolute;
+  margin: 0 auto;
+  border: 40px solid transparent;
+  margin-left: 29%;
+  border-bottom: 0;
+  border-top: 100px solid #fdb85d;
+  width: 80px;
+  height: 10%;
+}
+
+.moon {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  background-color: #fede93;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotatez(1485deg) scale(0.7,0.7);
+}
+
+.dark-hole {
+  position: absolute;
+  margin: 0 auto;
+  width: 100px;
+  top: 20%;
+  left: 57%;
+  height: 100px;
+  border-radius: 150px;
+  background-color: #f7ba66;
+}
+
+.light-hole {
+  position: absolute;
+  margin: 0 auto;
+  width: 50px;
+  top: 10%;
+  left: 29%;
+  height: 50px;
+  border-radius: 150px;
+  background-color: #f7ba66
+}
+
+.light-hole-2 {
+  position: absolute;
+  margin: 0 auto;
+  width: 50px;
+  top: 53%;
+  left: 16%;
+  height: 50px;
+  border-radius: 150px;
+  background-color: #f7ba66
+}
+
+.rocket {
+  position: absolute;
+  top: 29%;
+  left: 34%;
+  transform: rotatez(90deg) scale(0.4,0.4) translate(20%,120%);
+  animation-iteration-count: infinite;
+  animation-duration: 17s;
+  animation-name: rocketboost;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+
+@keyframes rocketboost {
+  0% { transform: rotatez(0deg) scale(0.4,0.4) translate(-180%,0%) }
+  25% { transform: rotatez(120deg) scale(0.4,0.4) translate(-240%,0%) }
+  50% { transform: rotatez(240deg) scale(0.4,0.4) translate(-240%,0%) }
+  100% { transform: rotatez(360deg) scale(0.4,0.4) translate(-180%,0%) }
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 3px;
+  border-radius: 5px;
+}
+
+.stars-1 {
+  float: right;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  overflow-x: hidden;
+  z-index: -1;
+  animation-name: move-stars-1;
+  animation-iteration-count: infinite;
+  animation-duration: 280s;
+}
+
+.stars-2 {
+  float: right;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  overflow-x: hidden;
+  z-index: -1;
+  animation-name: move-stars-2;
+  animation-iteration-count: infinite;
+  animation-duration: 260s;
+}
+
+@keyframes move-stars-1 {
+  from { margin-left: 0  }
+  to { margin-left: 100vw }
+}
+
+@keyframes move-stars-2 {
+  from { margin-left: -100vw  }
+  to { margin-left: 0 }
+}
+
+
+.shoot1 {
+  top: 50%;
+  left: 0%;
+  height: 2px;
+  width: 0%;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: yellow;
+  position: absolute;
+  animation-name: shoot-star;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+}
+
+@keyframes shoot-star {
+  0% { left: 6%; width: 0%; }
+  50% { left: 50%; width: 50% }
+  100% { left: 100%; width: 0% }
+}
+
+.shoot2 {
+  top: 50%;
+  left: 0%;
+  height: 2px;
+  width: 0%;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: yellow;
+  position: absolute;
+  animation-name: shoot-star2;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+}
+
+@keyframes shoot-star2 {
+  0% { left: 6%; width: 0%; }
+  50% { left: 50%; width: 50% }
+  100% { left: 100%; width: 0% }
+}
